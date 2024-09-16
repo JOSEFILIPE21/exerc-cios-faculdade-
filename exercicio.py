@@ -1,93 +1,38 @@
-"""clientes = []
+def recursiva(b,e):
+    if e == 0:
+        return 1
+    return b * recursiva (b,e-1)
 
-def adicionar_clientes(nome,telefone,email,endereço):
-    cliente = []
-    cliente = (nome,telefone,email,endereço)
-    clientes.append(list(cliente))
+resultado = recursiva(2,3)
+#print(resultado)
 
+def fibonacci(f):
+    if f == 0:
+        return 0
+    elif f == 1:
+        return 1
+    return fibonacci(f-1) + fibonacci(f-2)
 
-adicionar_clientes("jose filipe","22 998573662","filipe.zakiler@gmail.com", "rua cavalcante")
-adicionar_clientes("yan","22 997453432","yan.you@gmail.com","rua serra do mato grosso")
+resultado = fibonacci(10)
+#print(resultado)
 
-print (clientes)
+def contagem(c):
+    if c < 10:
+        return 1
+    return 1 + contagem(c/10)
 
-def exibir_clientes():
-    for i in clientes:
-        print (i)
-exibir_clientes()
+resultado = contagem(103)
+#print(resultado)
 
-def buscar_clientes(email):
-    for clientes_encontrados in clientes:
-        if email in clientes_encontrados:
-            print (clientes_encontrados)
+def palindromo(p):
+    if len(p) == 1 or len(p) == 0:
+        return "é palindromo"
+    elif p[0] != p[-1]:
+        return "não é palindromo"
 
-buscar_clientes("filipe.zakiler@gmail.com")
+    return palindromo(p[1:-1])
 
-        
-def remover_cliente(email):
-    for cliente in clientes:
-        if email in cliente:
-            clientes.remove(cliente)
-        
-remover_cliente("filipe.zakiler@gmail.com")
-
-print (clientes)"""
-
-import time
-clientes = []
-def adicionar_clientes(nome,telefone,email,endereço):
-    cliente = []
-    cliente = (nome,telefone,email,endereço)
-    clientes.append(list(cliente))
-
-def exibir_clientes():
-    for i in clientes:
-        print (i)
-
-def buscar_clientes(email):
-    for clientes_encontrados in clientes:
-        if email in clientes_encontrados:
-            print (clientes_encontrados)
-        
-def remover_cliente(email):
-    for cliente in clientes:
-        if email in cliente:
-            clientes.remove(cliente)
-
-
-while True:
-    busca = input("digite 1 para adicionar clientes, 2 para exibir clientes, 3 para buscar clientes, 4 para remover clientes ou 5 para sair")
-
-    if busca == "1":
-        nome = input("digite o nome")
-        telefone = input("digite o telefone")
-        email = input("digite o email")
-        endereço = input("digite o endereço")
-        adicionar_clientes(nome,telefone,email,endereço)
-        continue
-
-    elif busca == "2":
-        exibir_clientes()
-        time.sleep(3.0)
-        continue
-
-    elif busca == "3":
-        email = input("digite o email")
-        buscar_clientes(email)
-        time.sleep(3.0)
-        continue
-
-    elif busca == "4":  
-        email = input ("digite o email")    
-        remover_cliente(email)
-        continue
-
-    elif busca == "5":
-        break
-    else:
-        print ("digite corretamente")
-        continue
-
-
+resultado = palindromo('arara')
+print (resultado)
 
 
